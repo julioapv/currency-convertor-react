@@ -1,12 +1,23 @@
 let CurrencyRow = (props) => {
     const {
-        currencyOptions
+        currencyOptions,
+        selectedCurrency,
+        onChangeCurrency,
+        onChangeAmount,
+        amount,
     } = props
     return (
         <div>
-            <input type="number" 
-            className="border-solid border-gray-500 border-2 rounded m-2 p-1"/>
-            <select className="ml-1">
+            <input 
+            type="number" 
+            className="border-solid border-gray-500 border-2 rounded m-2 p-1"
+            value={amount}
+            onChange={onChangeAmount}
+            />
+            <select 
+            onChange={onChangeCurrency}
+            value={selectedCurrency}
+            className="ml-1">
                 {currencyOptions.map(option => (
                     <option key={option} value={option}>{option}</option>
                 ))}
