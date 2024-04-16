@@ -19,8 +19,8 @@ let CurrencyRow = (props) => {
             value={defaultCurrency}
             onChange={onChangeCurrencySelector}
             >
-                {currencyOptions.map(option => (
-                    <option key={option} value={option}>{option}</option>
+                {currencyOptions.map((option, index) => (
+                    <option key={index} value={option}>{option}</option>
                 ))}
             </select>
         </div>
